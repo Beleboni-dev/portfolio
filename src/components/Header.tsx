@@ -1,19 +1,36 @@
-import { Box, useColorMode, useColorModeValue } from "@chakra-ui/react";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons"; // Importe os ícones do Chakra UI ou de outra biblioteca de ícones que você esteja usando
-import theme from "@/styles/theme";
+import { Box, Heading, useColorMode, IconButton } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+
+import {AdjustIconTop } from "./IconComponents/AdjustIconTop";
+import { HeaderMenu } from "./HeaderMenu";
+
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box as="header" h="5rem" p="4">
-        <Box display="flex" justifyContent="flex-end" alignItems="center" h="100%">
-        <Box display="flex" justifyContent="center" alignItems="center">
-        <button onClick={toggleColorMode}>
-        {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        </button>
+    <Box as="header" position="relative">
+      <AdjustIconTop/>
+      <Box position="absolute" top="2.8125rem" right="2rem">
+        <IconButton
+          icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          onClick={toggleColorMode} aria-label={""}        />
+      </Box>
+      <Box
+        display="flex"
+        gap="1rem"
+        alignItems="center"
+        position="absolute"
+        top="2.8125rem"
+        left="2.8125rem"
+      >
+        <Box as="img" src="/perfil.png" alt="foto-lucas" />
+        <Box>
+          <Heading as="h2">Lucas Beleboni</Heading>
+          <Box as="h3">Developer</Box>
         </Box>
-        </Box>
+      </Box>
+      <HeaderMenu/> 
     </Box>
   );
 };

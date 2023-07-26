@@ -6,13 +6,10 @@ import Header from "./Header";
 
 const Template: React.FC<IChildrenProps> = ({ children }) => {
   return (
-
-        <Box maxW="container" mx="auto">
-        <Header/>
+    <Box maxW="container" mx="auto">
+      <Header />
       <main>{children}</main>
-
     </Box>
- 
   );
 };
 

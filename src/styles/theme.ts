@@ -1,5 +1,7 @@
 // theme.ts (ou qualquer outro nome que você preferir)
 import { extendTheme } from "@chakra-ui/react";
+
+
 const theme = extendTheme({
   colors: {
     dark: {
@@ -8,14 +10,19 @@ const theme = extendTheme({
       accent: "#e74c3c",
       darkGray: "#404040",
       green: "#27ae60",
+      gradientGreen: "#6ED25E",
+      gradientBlue: "#00FFF0",
       // Adicione mais cores dark conforme necessário
     },
     light: {
       primary: "#ffffff",
       secondary: "#34495e",
       accent: "#e67e22",
+      darkGray: "#1b1b1b",
       lightGray: "#f0f0f0",
       purple: "#9b59b6",
+      gradientOrange: "#ED672D",
+      gradientPurple: "#8000FF",
       // Adicione mais cores light conforme necessário
     },
   },
@@ -38,7 +45,7 @@ const theme = extendTheme({
     // lg: "40rem",
     // xl: "50rem",
   },
-   breakpoints: {
+  breakpoints: {
     // Defina os breakpoints responsivos conforme necessário
     sm: "30em", // 480px
     md: "48em", // 768px
